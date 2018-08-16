@@ -41,3 +41,4 @@ Showing top 10 nodes out of 64
 执行
 >go-torch -u http://localhost:6060/debug/pprof/ -p > test.svg
 然后浏览器打开test.svg能够看到火焰图
+![](test.svg)
