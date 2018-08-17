@@ -5,8 +5,8 @@
 
 然后执行
 >go tool pprof http://localhost:6060/debug/pprof/profile
-查看cpu信息
-或者是
+查看cpu信息或者是
+
 >go tool pprof http://localhost:6060/debug/pprof/heap
 查看内存使用
 <br><br><br>
