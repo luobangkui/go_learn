@@ -5,6 +5,22 @@ import (
 )
 
 func main() {
+	//laddr := "127.0.0.1"
+	//
+	//addr, _ := net.ResolveTCPAddr("tcp", laddr+":0")
+	//timeout := time.Duration(5 * time.Second)
+	//
+	//dialer := &net.Dialer{
+	//	LocalAddr: addr,
+	//	Timeout:   timeout,
+	//}
+	//
+	//conn, err := dialer.Dial("tcp", "127.0.0.1:9987")
+	//if err != nil {
+	//	panic(err)
+	//}
+	//conn.fl
+	//fmt.Println(myAtoi("words and 987"))
 
 }
 

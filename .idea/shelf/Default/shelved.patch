@@ -1,0 +1,20 @@
+Index: aboutpprof/README.md
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>#### 使用go tool和go-torch 性能分析\n##### go tool\n首先执行代码\n>go run leaky.go\n\n然后执行\n>go tool pprof http://localhost:6060/debug/pprof/profile\n查看cpu信息\n或者是\n>go tool pprof http://localhost:6060/debug/pprof/heap\n查看内存使用\n<br><br><br>\n默认运行30s采集数据,在pprof里面执行top\n```\nFetching profile over HTTP from http://localhost:6060/debug/pprof/profile\nSaved profile in /Users/luobangkui/pprof/pprof.samples.cpu.009.pb.gz\nType: cpu\nTime: Aug 16, 2018 at 4:29pm (CST)\nDuration: 30s, Total samples = 1.10s ( 3.67%)\nEntering interactive mode (type \"help\" for commands, \"o\" for options)\n(pprof) top\nShowing nodes accounting for 950ms, 86.36% of 1100ms total\nShowing top 10 nodes out of 64\n      flat  flat%   sum%        cum   cum%\n     290ms 26.36% 26.36%      290ms 26.36%  runtime.usleep\n     210ms 19.09% 45.45%      210ms 19.09%  runtime.memclrNoHeapPointers\n     110ms 10.00% 55.45%      260ms 23.64%  runtime.bulkBarrierPreWrite\n      60ms  5.45% 60.91%       60ms  5.45%  runtime.mach_semaphore_signal\n      60ms  5.45% 66.36%       60ms  5.45%  runtime.memmove\n      50ms  4.55% 70.91%       50ms  4.55%  runtime.heapBits.bits (inline)\n      50ms  4.55% 75.45%       50ms  4.55%  runtime.inheap (inline)\n      50ms  4.55% 80.00%      330ms 30.00%  runtime.typedmemmove\n      40ms  3.64% 83.64%       40ms  3.64%  runtime.heapBits.next (inline)\n      30ms  2.73% 86.36%       30ms  2.73%  runtime.(*wbBuf).putFast (inline)\n(pprof)\n```\n能够查看top n的cpu使用\n执行web，会生成对应svg文件，可以直接使用浏览器打开\n\n##### 火焰图go-torch\n执行\n>go-torch -u http://localhost:6060/debug/pprof/ -p > test.svg\n然后浏览器打开test.svg能够看到火焰图\n![](test.svg)
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- aboutpprof/README.md	(revision 7ed481f1cb2f61d437f5811eb9b68e2a34068db1)
++++ aboutpprof/README.md	(date 1534408594000)
+@@ -5,8 +5,8 @@
+ 
+ 然后执行
+ >go tool pprof http://localhost:6060/debug/pprof/profile
+-查看cpu信息
+-或者是
++查看cpu信息或者是
++
+ >go tool pprof http://localhost:6060/debug/pprof/heap
+ 查看内存使用
+ <br><br><br>
