@@ -37,6 +37,10 @@ Showing top 10 nodes out of 64
 能够查看top n的cpu使用
 执行web，会生成对应svg文件，可以直接使用浏览器打开
 
+
+> go tool 使用curl出来的文件
+go tool trace  -http=':8888' trace.data
+
 ##### 火焰图go-torch
 执行
 >go-torch -u http://localhost:6060/debug/pprof/ -p > test.svg
